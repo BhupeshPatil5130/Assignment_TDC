@@ -31,7 +31,7 @@ Intro: [intro text]`;
   } catch (error) {
     console.error("AI Error:", error.message);
     matchItem.aiScore = matchItem.score;
-    matchItem.aiIntro = "AI evaluation failed. High potential match based on system logic.";
+    matchItem.aiIntro = `AI evaluation failed: ${error.message}`;
   }
 
   return matchItem;
