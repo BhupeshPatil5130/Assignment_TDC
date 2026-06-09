@@ -1,5 +1,4 @@
 const Customer = require('../models/Customer');
-const { fakerEN_IN: faker } = require('@faker-js/faker');
 const matchService = require('../services/matchService');
 const aiService = require('../services/aiService');
 
@@ -28,6 +27,7 @@ exports.getCustomerDetails = async (req, res) => {
 
 exports.seedDummyProfiles = async (req, res) => {
   try {
+    const { fakerEN_IN: faker } = await import('@faker-js/faker');
     const profiles = [];
     for (let i = 0; i < 100; i++) {
       const gender = faker.helpers.arrayElement(['Male', 'Female']);
